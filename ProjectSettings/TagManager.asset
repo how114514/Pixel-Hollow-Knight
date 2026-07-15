@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - PlayerBody
+  - PlayerAttack
+  - EnemyBody
+  - EnemyAttack
+  - PlayerSkill
+  - EnemySkill
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Back
+    uniqueID: 4200879929
+    locked: 0
+  - name: Middle
+    uniqueID: 102743525
+    locked: 0
+  - name: Front
+    uniqueID: 2475183639
+    locked: 0
