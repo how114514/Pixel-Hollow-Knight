@@ -27,7 +27,7 @@ public class EnemyChargeState : EnemyIState
     {
         enemy.rb.linearVelocity = new Vector2(enemy.chargeSpeed * -enemy.facingDir, 0);
 
-        if (enemy.facingDir == -1 && enemy.physicsCheck.touchRightWall)
+        /*if (enemy.facingDir == -1 && enemy.physicsCheck.touchRightWall)
         {
             stateMachine.ChangeState(enemy.chargeEndState);
         }
@@ -35,7 +35,7 @@ public class EnemyChargeState : EnemyIState
         if (enemy.facingDir == 1 && enemy.physicsCheck.touchLeftWall)
         {
             stateMachine.ChangeState(enemy.chargeEndState);
-        }
+        }*/
     }
 
     public void OnExit()

@@ -21,10 +21,10 @@ public class EnemyBattleCryStartState : EnemyIState
 
     public void OnUpdate()
     {
-        if (enemy.physicsCheck.isGround)
+        /*if (enemy.physicsCheck.isGround)
         {
             stateMachine.ChangeState(enemy.battleCryState);
-        }
+        }*/
     }
 
     public void OnExit()

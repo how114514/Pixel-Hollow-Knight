@@ -33,7 +33,7 @@ public class EnemyBackJumpState : EnemyIState
     {
         enemy.FacePlayer();
 
-        if (enemy.facingDir == 1 && enemy.physicsCheck.touchRightWall)
+        /*if (enemy.facingDir == 1 && enemy.physicsCheck.touchRightWall)
         {
             stateMachine.ChangeState(enemy.backFallState);
         }
@@ -41,7 +41,7 @@ public class EnemyBackJumpState : EnemyIState
         if (enemy.facingDir == -1 && enemy.physicsCheck.touchLeftWall)
         {
             stateMachine.ChangeState(enemy.backFallState);
-        }
+        }*/
     }
 
     public void OnExit()

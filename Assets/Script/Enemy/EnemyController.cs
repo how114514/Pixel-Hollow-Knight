@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
     public Transform player;
-    public PhysicsCheck physicsCheck;
+    //public PhysicsCheck physicsCheck;
     public Collider2D col;
     public CameraManager cameraManager;
     public Collider2D endBounds;
@@ -124,7 +124,7 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        physicsCheck = GetComponent<PhysicsCheck>();
+        //physicsCheck = GetComponent<PhysicsCheck>();
         col = GetComponent<Collider2D>();
         audioSource = GetComponent<AudioSource>();
 
@@ -394,10 +394,10 @@ public class EnemyController : MonoBehaviour
 
     private void ChangeToDiveEnd()
     {
-        if ((isDiveAttackEnd) && (physicsCheck.isGround) && (!isDead))
+        /*if ((isDiveAttackEnd) && (physicsCheck.isGround) && (!isDead))
         {
             stateMachine.ChangeState(diveEndState);
-        }
+        }*/
     }
 
     public void BattleCryEnd()

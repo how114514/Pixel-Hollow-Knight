@@ -21,7 +21,7 @@ public class EnemyFallState : EnemyIState
 
     public void OnUpdate()
     {
-        if (enemy.physicsCheck.isGround)
+        /*if (enemy.physicsCheck.isGround)
         { 
             float r = UnityEngine.Random.value;
 
@@ -37,7 +37,7 @@ public class EnemyFallState : EnemyIState
             {
                 stateMachine.ChangeState(enemy.jumpState);
             }
-        }
+        }*/
     }
 
     public void OnExit()
