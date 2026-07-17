@@ -1,41 +1,23 @@
 using UnityEngine;
 
+/// <summary>
+/// 冲击波弹体。由 PlayerAbility 实例化。
+/// </summary>
 public class PlayerShockwave : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    public float speed = 8f;
+    public float lifetime = 1.5f;
+    private float dir;
 
-    public float speed;
-
-    float direction;
-
-    private void Awake()
+    public void Launch(float direction)
     {
-        rb = GetComponent<Rigidbody2D>();
-
-        Destroy(gameObject, 5f);
+        dir = direction;
+        transform.localScale = new Vector3(dir, 1, 1);
+        Destroy(gameObject, lifetime);
     }
 
-    public void SetDirection(float dir)
+    private void Update()
     {
-        direction = dir;
-
-        if (dir < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-    }
-
-    void Update()
-    {
-        rb.linearVelocity = new Vector2(speed * direction, 0);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.CompareTag("Enemy")) return;
-
-        other.GetComponent<EnemyHitFlash>()?.Flash();
-
-        other.GetComponent<EnemyController>()?.TakeDamage(70);
+        transform.Translate(Vector3.right * dir * speed * Time.deltaTime);
     }
 }

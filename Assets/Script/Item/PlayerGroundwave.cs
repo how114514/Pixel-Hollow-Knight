@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 下砸地面波。播动画，播完自动销毁。
+/// </summary>
 public class PlayerGroundwave : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    private Animator animator;
+
+    private void Start()
     {
-        if (!other.CompareTag("Enemy")) return;
-
-        other.GetComponent<EnemyHitFlash>()?.Flash();
-
-        other.GetComponent<EnemyController>()?.TakeDamage(50);
+        animator = GetComponent<Animator>();
     }
 
-    public void DestroyGroundwave()
+    private void Update()
     {
-        Destroy(gameObject);
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            Destroy(gameObject);
     }
 }

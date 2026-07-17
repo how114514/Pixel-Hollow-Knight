@@ -230,9 +230,9 @@ public class EnemyController : MonoBehaviour
     {
         GameObject shockwave = Instantiate(shockwavePrefab, castPoint.position, Quaternion.identity);
 
-        EnemyShockwave shockwaveScript = shockwave.GetComponent<EnemyShockwave>();
+        //EnemyShockwave shockwaveScript = shockwave.GetComponent<EnemyShockwave>();
 
-        shockwaveScript.SetDirection(facingDir);
+        //shockwaveScript.SetDirection(facingDir);
 
         cameraManager.Shake();
     }

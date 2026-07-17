@@ -1,18 +1,22 @@
 using UnityEngine;
 
+/// <summary>
+/// 上吼声波。播放动画，播完自动销毁。
+/// </summary>
 public class PlayerSonicwave : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    private Animator animator;
+
+    private void Start()
     {
-        if (!other.CompareTag("Enemy")) return;
-
-        other.GetComponent<EnemyHitFlash>()?.Flash();
-
-        other.GetComponent<EnemyController>()?.TakeDamage(100);
+        animator = GetComponent<Animator>();
     }
 
-    public void DestroySonicwave()
+    private void Update()
     {
-        Destroy(gameObject);
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

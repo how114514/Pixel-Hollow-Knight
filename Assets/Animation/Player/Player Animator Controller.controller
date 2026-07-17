@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: downSmashStart
+  m_Name: diveWindup
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -33,7 +33,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: downSmash
+  m_Name: diving
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -451,7 +451,7 @@ AnimatorStateMachine:
     m_Position: {x: 410, y: 600, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8895637214089263604}
-    m_Position: {x: 445, y: 665, z: 0}
+    m_Position: {x: 440, y: 660, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3141388348740612756}
     m_Position: {x: 480, y: 730, z: 0}
@@ -478,7 +478,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: downSmashEnd
+  m_Name: diveRecover
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
