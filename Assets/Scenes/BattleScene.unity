@@ -1791,6 +1791,7 @@ GameObject:
   - component: {fileID: 738853063}
   - component: {fileID: 738853064}
   - component: {fileID: 738853068}
+  - component: {fileID: 738853069}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -2056,6 +2057,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &738853069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738853059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a87f7c686f6744b8f0b52581ef2081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
+  damage: 1
 --- !u!1 &770750555
 GameObject:
   m_ObjectHideFlags: 0
@@ -4148,6 +4162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   blackDashCooldown: 2
+  hurtRecoilForce: 5
+  invincibleDuration: 1.5
+  flashInterval: 0.1
   input: {fileID: 0}
   movement: {fileID: 0}
   animation: {fileID: 0}
@@ -4168,6 +4185,8 @@ MonoBehaviour:
   attackIndex: 0
   blackDashTimer: 0
   blackDashCharging: 0
+  isInvincible: 0
+  lastDamageSourcePos: {x: 0, y: 0}
 --- !u!114 &1627088915
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -54,6 +54,7 @@
     <Compile Include="Assets\Script\Manager\StratTrigger.cs" />
     <Compile Include="Assets\Script\ScriptableObject\BoundsEventSO.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\Script\DamageDealer.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyState\Dive\EnemyDiveEndState.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyState\Movement\EnemyMoveState.cs" />
     <Compile Include="Assets\Script\Player\States\Action\PlayerActionAttackState.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Script\Enemy\EnemyState\Uppercut\EnemyUppercutStartState.cs" />
     <Compile Include="Assets\Script\Player\HitBox.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyState\Movement\EnemyIdleState.cs" />
+    <Compile Include="Assets\Script\Player\States\Action\PlayerActionHurtState.cs" />
     <Compile Include="Assets\Script\Player\UI\HPUI.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyState\Slash\EnemySlashStartState.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyState\Uppercut\EnemyUppercutAttackState.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Assets\Script\Enemy\EnemyState\Movement\EnemyFallState.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyHitFlash.cs" />
     <Compile Include="Assets\Script\Player\Components\PlayerStats.cs" />
+    <Compile Include="Assets\Script\Player\States\Action\PlayerActionDeadState.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyState\Charge\EnemyChargeEndState.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyState\Dive\EnemyDiveStartState.cs" />
     <Compile Include="Assets\Script\Camera\ParallaxLayer.cs" />
