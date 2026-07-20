@@ -1,22 +1,6 @@
-public class EnemyStateMachine
+public class EnemyStateMachine : StateMachine<Enemy>
 {
-    public EnemyIState currentState;
+    public Enemy enemy => owner;
 
-    public void Initialize(EnemyIState startState)
-    {
-        currentState = startState;
-        currentState.OnEnter();
-    }
-
-    public void ChangeState(EnemyIState newState)
-    {
-        currentState.OnExit();
-        currentState = newState;
-        currentState.OnEnter();
-    }
-
-    public void Update()
-    {
-        currentState.OnUpdate();
-    }
+    public EnemyStateMachine(Enemy enemy) : base(enemy) { }
 }
