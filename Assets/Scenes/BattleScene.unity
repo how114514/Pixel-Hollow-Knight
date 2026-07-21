@@ -1002,6 +1002,12 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
+  clashLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  blockLayers:
+    serializedVersion: 2
+    m_Bits: 0
   useTrigger: 1
   combat: {fileID: 1627088916}
 --- !u!1 &453915435
@@ -1186,7 +1192,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.645896, y: 3.48229, z: -10}
+  m_LocalPosition: {x: -21.82841, y: 2.98415, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1802,13 +1808,15 @@ GameObject:
   - component: {fileID: 738853070}
   - component: {fileID: 738853073}
   - component: {fileID: 738853074}
+  - component: {fileID: 738853075}
+  - component: {fileID: 738853076}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &738853060
 SpriteRenderer:
   serializedVersion: 2
@@ -1899,7 +1907,7 @@ Transform:
   m_GameObject: {fileID: 738853059}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.26, y: 2.72, z: 0}
+  m_LocalPosition: {x: -28, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2084,6 +2092,12 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
+  clashLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  blockLayers:
+    serializedVersion: 2
+    m_Bits: 0
   useTrigger: 0
   combat: {fileID: 0}
 --- !u!114 &738853070
@@ -2107,6 +2121,7 @@ MonoBehaviour:
   upperSlashSpeedY: 11
   diveForce: 30
   chargeSpeed: 30
+  chargeHeight: 1
   normalGravity: 2
   fallGravity: 4
   fallThreshold: -0.5
@@ -2136,6 +2151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   player: {fileID: 1627088906}
+  roarVFX: {fileID: 5708749969626270476, guid: 18962accd0f48384ca64267d9507f1cd, type: 3}
   shockwavePrefab: {fileID: 5848302285854743391, guid: 0b90b184445a81b4a853467577da2d5f, type: 3}
   castPoint: {fileID: 738853062}
   groundSpikePrefab: {fileID: 9071834520750206996, guid: 853c58cf5a3af6441936dcb5f3ab06df, type: 3}
@@ -2145,11 +2161,15 @@ MonoBehaviour:
   leftWallX: -33
   rightWallX: -15
   shockwaveDir: 0
+  lastDamageSourcePos: {x: 0, y: 0}
   animation: {fileID: 0}
   movement: {fileID: 0}
   stats: {fileID: 0}
+  hitFlash: {fileID: 0}
+  hitVFX: {fileID: 0}
   physicsCheck: {fileID: 0}
   rb: {fileID: 0}
+  col: {fileID: 0}
 --- !u!114 &738853073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2187,8 +2207,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62be6a6ece6d6864ca94c9936bb0d3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  maxHP: 100
+  maxHP: 1000
   currentHP: 0
+--- !u!114 &738853075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738853059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183f2f8042bca064796f07dc6f32742b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHitFlash
+  flashDuration: 0.1
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &738853076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738853059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994e73ae803abeb41b28e9467d47026b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHitVFX
+  bloodPrefab: {fileID: 7488188166817451964, guid: c5d4f5dc2a37eea418fb3c4fe2e3836d, type: 3}
 --- !u!1 &770750555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3211,6 +3258,12 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
+  clashLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  blockLayers:
+    serializedVersion: 2
+    m_Bits: 0
   useTrigger: 1
   combat: {fileID: 1627088916}
 --- !u!1 &1281917399
@@ -3317,6 +3370,12 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
+  clashLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  blockLayers:
+    serializedVersion: 2
+    m_Bits: 128
   useTrigger: 1
   combat: {fileID: 0}
 --- !u!1 &1331466365
@@ -3981,6 +4040,7 @@ GameObject:
   - component: {fileID: 1627088917}
   - component: {fileID: 1627088916}
   - component: {fileID: 1627088918}
+  - component: {fileID: 1627088919}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -4105,7 +4165,7 @@ Transform:
   m_GameObject: {fileID: 1627088902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.41, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4312,7 +4372,6 @@ MonoBehaviour:
   blackDashCooldown: 2
   hurtRecoilForce: 5
   invincibleDuration: 1.5
-  flashInterval: 0.1
   input: {fileID: 0}
   movement: {fileID: 0}
   animation: {fileID: 0}
@@ -4322,7 +4381,7 @@ MonoBehaviour:
   physicsCheck: {fileID: 0}
   rb: {fileID: 0}
   col: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  hitFlash: {fileID: 0}
   vfxAnimator: {fileID: 0}
   movementLocked: 0
   isRecoiling: 0
@@ -4372,6 +4431,7 @@ MonoBehaviour:
   pogoForce: 10
   recoilSpeedX: 2
   recoilDuration: 0.1
+  clashVFX: {fileID: 5537287332768851396, guid: f37a85d7524e2a44aae7fc0cb7bd42e0, type: 3}
 --- !u!114 &1627088917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4384,8 +4444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc216016397b384ab486d034c259c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  maxHP: 100
-  currentHP: 0
+  maxHP: 1000
+  currentHP: 1000
   maxEnergy: 9
   currentEnergy: 0
 --- !u!114 &1627088918
@@ -4409,6 +4469,20 @@ MonoBehaviour:
   diveForce: 15
   groundwavePrefab: {fileID: 6817715170191409990, guid: 63772828906cfdb4b91035483ae8f52e, type: 3}
   groundwavePoint: {fileID: 1627088906}
+--- !u!114 &1627088919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627088902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b85628f70602b4b83fff3df87f36ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHitFlash
+  flashInterval: 0.1
+  flashAlpha: 0.3
 --- !u!1 &1628984351
 GameObject:
   m_ObjectHideFlags: 0
@@ -4512,6 +4586,12 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
+  clashLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  blockLayers:
+    serializedVersion: 2
+    m_Bits: 0
   useTrigger: 1
   combat: {fileID: 1627088916}
 --- !u!1 &1640971614
@@ -4606,10 +4686,6 @@ CompositeCollider2D:
       - X: -150000000
         Y: 100000000
       - X: -150000000
-        Y: -10000000
-    - - X: -130000000
-        Y: -10000000
-      - X: -130000000
         Y: 20000000
       - X: -30000000
         Y: 20000000
@@ -4625,13 +4701,11 @@ CompositeCollider2D:
       - {x: 7.9999704, y: 15}
       - {x: -38, y: 14.999971}
       - {x: -37.999973, y: -6}
-    - - {x: -15, y: -0.9999706}
+    - - {x: 3, y: -0.9999706}
       - {x: -33, y: -0.9999706}
       - {x: -32.999973, y: 10}
       - {x: -15, y: 9.99997}
-    - - {x: 3, y: -0.9999706}
-      - {x: -13, y: -0.9999706}
-      - {x: -12.99997, y: 2}
+      - {x: -14.999971, y: 2}
       - {x: -3, y: 2.0000293}
       - {x: -2.9999707, y: 5}
       - {x: 3, y: 4.9999704}
@@ -6843,7 +6917,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 12
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6853,7 +6927,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7119,26 +7193,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: -15, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: -14, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
   - first: {x: 3, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -7239,26 +7293,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: -15, y: 0, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: -14, y: 0, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
   - first: {x: 3, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -7350,26 +7384,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
   - first: {x: -34, y: 1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: -15, y: 1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: -14, y: 1, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -7483,7 +7497,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7493,7 +7507,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -11791,22 +11805,22 @@ Tilemap:
       m_AllTileFlags: 1073741826
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 702
+  - m_RefCount: 696
     m_Data: {fileID: 11400000, guid: 6d3eeb38032913f459e5c4cc99d1eaf2, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: -1761464425, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
   - m_RefCount: 462
     m_Data: {fileID: 620066873, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
-  - m_RefCount: 78
+  - m_RefCount: 80
     m_Data: {fileID: -923437414, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 273273024, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
-  - m_RefCount: 77
+  - m_RefCount: 78
     m_Data: {fileID: -723773121, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
-  - m_RefCount: 35
+  - m_RefCount: 32
     m_Data: {fileID: 273067261, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
-  - m_RefCount: 36
+  - m_RefCount: 32
     m_Data: {fileID: -550927844, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1576830929, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
@@ -11816,12 +11830,12 @@ Tilemap:
     m_Data: {fileID: -1424392928, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1693318299, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
-  - m_RefCount: 3
-    m_Data: {fileID: 714127183, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
   - m_RefCount: 2
+    m_Data: {fileID: 714127183, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: 90797432, guid: 190f2ca30f0bcdc419bdce6904ffbbc8, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 702
+  - m_RefCount: 696
     m_Data:
       e00: 1
       e01: 0
@@ -11840,7 +11854,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 702
+  - m_RefCount: 696
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -12096,6 +12110,12 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
+  clashLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  blockLayers:
+    serializedVersion: 2
+    m_Bits: 0
   useTrigger: 1
   combat: {fileID: 0}
 --- !u!1 &1728761012
@@ -12293,6 +12313,12 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
+  clashLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  blockLayers:
+    serializedVersion: 2
+    m_Bits: 128
   useTrigger: 1
   combat: {fileID: 0}
 --- !u!1 &1803747256
@@ -12507,7 +12533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 131283928}
+  m_BoundingShape2D: {fileID: 770750557}
   m_Damping: 0.5
   m_MaxWindowSize: -1
   m_Padding: 0
@@ -12559,7 +12585,7 @@ Transform:
   m_GameObject: {fileID: 1924116382}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.41, y: 3.5, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12670,6 +12696,12 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
+  clashLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  blockLayers:
+    serializedVersion: 2
+    m_Bits: 0
   useTrigger: 1
   combat: {fileID: 1627088916}
 --- !u!1 &1935071768
@@ -12916,12 +12948,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1990789960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f46f675b03824c4fbc13f36937ae976, type: 3}
+  m_Script: {fileID: 11500000, guid: da211a7019076414bb846e1ef7606b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startEvent: {fileID: 11400000, guid: 5d4c7c1ab9a7f1a4e85718333a6ae0fd, type: 2}
-  setBoundsEvent: {fileID: 11400000, guid: 0e6d7f3fad7807c408e280f613a375a9, type: 2}
-  roomBounds: {fileID: 770750557}
+  target: {fileID: 738853059}
+  door: {fileID: 2045983460}
 --- !u!1 &2025934053
 GameObject:
   m_ObjectHideFlags: 3
@@ -13030,7 +13061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2045983460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13040,7 +13071,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2045983459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f803e9120a3ba994fa6504244eb53028, type: 3}
+  m_Script: {fileID: 11500000, guid: c14185ab231e76d498df2a301ab875a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &2045983461
@@ -13179,7 +13210,7 @@ Transform:
   m_GameObject: {fileID: 2045983459}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.642, y: 0.503, z: 0}
+  m_LocalPosition: {x: -14.645, y: 0.503, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

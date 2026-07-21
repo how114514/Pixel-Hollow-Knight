@@ -435,14 +435,8 @@ AnimatorStateMachine:
     m_State: {fileID: 981712971849903422}
     m_Position: {x: 340, y: 420, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 4664437267423635492}
-    m_Position: {x: 550, y: 420, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -3825064560502852173}
     m_Position: {x: 550, y: 470, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 8690089857981492136}
-    m_Position: {x: 340, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7241840105743202336}
     m_Position: {x: 375, y: 535, z: 0}
@@ -523,32 +517,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &4664437267423635492
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: healed
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 45b299a888ee8c64db546316cf5f63fa, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &5680153141124618851
 AnimatorState:
   serializedVersion: 6
@@ -622,32 +590,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 0883ad4861cac3049ae5d8e1b5206053, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &8690089857981492136
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: deadStart
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5f2cb7dce629106419827dd945403748, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
