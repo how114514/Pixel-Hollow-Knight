@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a395d3ffe80737045bb99a43b4e130dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  lifetime: 2
+  speed: 40
+  lifetime: 1
   flip: 1
 --- !u!50 &7063705075861343440
 Rigidbody2D:
@@ -229,3 +229,11 @@ MonoBehaviour:
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
+  clashLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  blockLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  useTrigger: 1
+  combat: {fileID: 0}
