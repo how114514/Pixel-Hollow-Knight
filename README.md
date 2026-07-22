@@ -40,5 +40,4 @@ Assets/Script/
 │   └── Components/ Movement, Animation, Stats, Audio
 ├── Item/           Projectiles, VFX, Door
 ├── Manager/        GameEnd, CameraShake, ScreenFader
-└── ScriptableObject/ Events
 ```
