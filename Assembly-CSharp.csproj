@@ -50,12 +50,12 @@
     <Compile Include="Assets\Script\Player\States\Action\PlayerActionNoneState.cs" />
     <Compile Include="Assets\Script\Item\PlayerSonicwave.cs" />
     <Compile Include="Assets\Script\Player\States\Action\PlayerActionShockwaveState.cs" />
-    <Compile Include="Assets\Script\ScriptableObject\BoundsEventSO.cs" />
     <Compile Include="Assets\Script\Item\RoarVFX.cs" />
     <Compile Include="Assets\Script\DamageDealer.cs" />
     <Compile Include="Assets\Script\Player\States\Action\PlayerActionAttackState.cs" />
     <Compile Include="Assets\Script\Player\States\Action\PlayerActionHealState.cs" />
     <Compile Include="Assets\Script\Player\States\Action\PlayerActionUpRoarState.cs" />
+    <Compile Include="Assets\Script\Player\Components\PlayerAudio.cs" />
     <Compile Include="Assets\Script\Player\States\Movement\PlayerIdleState.cs" />
     <Compile Include="Assets\Script\Item\Shockwave.cs" />
     <Compile Include="Assets\Script\Core\State.cs" />
@@ -75,8 +75,8 @@
     <Compile Include="Assets\Script\Enemy\EnemyAnimation.cs" />
     <Compile Include="Assets\Script\Enemy\States\EnemyDeadState.cs" />
     <Compile Include="Assets\Script\Player\Core\PlayerState.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyAudio.cs" />
     <Compile Include="Assets\Script\Player\Components\PlayerHitFlash.cs" />
-    <Compile Include="Assets\Script\ScriptableObject\VoidEventSO.cs" />
     <Compile Include="Assets\Script\IDamageable.cs" />
     <Compile Include="Assets\Script\Player\States\Movement\PlayerFallState.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyStats.cs" />
@@ -95,7 +95,6 @@
     <Compile Include="Assets\Script\Item\Door.cs" />
     <Compile Include="Assets\Script\Camera\ParallaxLayer.cs" />
     <Compile Include="Assets\Script\Player\Components\PlayerAbility.cs" />
-    <Compile Include="Assets\Script\Camera\CameraManager.cs" />
     <Compile Include="Assets\InputSystem\PlayerInputControl.cs" />
     <Compile Include="Assets\Script\Player\UI\EnergyUI.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyStateMachine.cs" />
