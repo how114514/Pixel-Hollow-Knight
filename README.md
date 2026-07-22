@@ -23,7 +23,6 @@
 | J | Attack |
 | I | Skill |
 | U | Heal |
-| R | Restart |
 
 ## Project Structure
 
