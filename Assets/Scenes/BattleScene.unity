@@ -2207,7 +2207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62be6a6ece6d6864ca94c9936bb0d3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  maxHP: 1000
+  maxHP: 100
   currentHP: 0
 --- !u!114 &738853075
 MonoBehaviour:
@@ -4556,7 +4556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc216016397b384ab486d034c259c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  maxHP: 9
+  maxHP: 1000
   currentHP: 0
   maxEnergy: 9
   currentEnergy: 0
