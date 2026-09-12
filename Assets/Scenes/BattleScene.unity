@@ -1682,7 +1682,7 @@ Animator:
   m_GameObject: {fileID: 625238523}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c4f5a5f060f77ee4893c24c529effb6b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 02744a0b82946544583379e0beba9aa3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2149,7 +2149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   player: {fileID: 1627088906}
-  roarVFX: {fileID: 5708749969626270476, guid: 18962accd0f48384ca64267d9507f1cd, type: 3}
+  roarVFX: {fileID: 2171501398133045170, guid: 29da85f9f68f1a949901cdeb4901a192, type: 3}
   shockwavePrefab: {fileID: 5848302285854743391, guid: 0b90b184445a81b4a853467577da2d5f, type: 3}
   castPoint: {fileID: 738853062}
   groundSpikePrefab: {fileID: 9071834520750206996, guid: 853c58cf5a3af6441936dcb5f3ab06df, type: 3}
@@ -2207,7 +2207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62be6a6ece6d6864ca94c9936bb0d3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  maxHP: 1000
+  maxHP: 100
   currentHP: 0
 --- !u!114 &738853075
 MonoBehaviour:
@@ -3620,7 +3620,7 @@ Animator:
   m_GameObject: {fileID: 1432276167}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 90a8cbfb0cf373b48b8e24cdc9afb9ed, type: 2}
+  m_Controller: {fileID: 9100000, guid: add6400e41367b1489b6dcdb017b8eb1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3882,7 +3882,7 @@ Animator:
   m_GameObject: {fileID: 1540987676}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2214ca5c3c456d441a88d28d7b86825b, type: 2}
+  m_Controller: {fileID: 9100000, guid: b30f28b9005eaaf498bd3b14949ec13f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4556,7 +4556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc216016397b384ab486d034c259c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  maxHP: 9
+  maxHP: 1000
   currentHP: 0
   maxEnergy: 9
   currentEnergy: 0
